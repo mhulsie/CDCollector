@@ -11,7 +11,7 @@ $artist = mysqli_real_escape_string($conn, $_POST["artist"]);
 $title = mysqli_real_escape_string($conn, $_POST["title"]);
 $year = mysqli_real_escape_string($conn, $_POST["year"]);
 
-$sql = "INSERT INTO (album, artist, title, year)
+$sql = "INSERT INTO album (artist, title, year)
         VALUES ('$artist', '$title', '$year')";
 $result = $conn->query($sql);
 $conn->close();
