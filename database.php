@@ -7,8 +7,8 @@
  */
 
 $servername = "localhost";
-$username = "root";
-$password = "secret";
+$username = "master";
+$password = "password";
 $dbname = "collectordb";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

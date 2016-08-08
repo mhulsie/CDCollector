@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>CD Collector</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="custom.js"></script>
 </head>
 <body>
     <table>
@@ -18,14 +16,17 @@
     </table>
     <br>
     <div>Add Album</div>
-    <form id="addForm" method="post">
+    <form id="addForm" name="addForm">
         Artist:<br>
-        <input type="text" name="artist"><br>
+        <input type="text" name="artist" id="artist" required><br>
         Title:<br>
-        <input type="text" name="title"><br>
+        <input type="text" name="title" id="title" required><br>
         Year:<br>
-        <input type="text" name="year"><br>
-        <button id="addButton" onclick="add()">Add</button>
+        <input type="text" name="year" id="year" required><br>
     </form>
+    <button id="addButton" onclick="add()">Add</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="custom.js"></script>
 </body>
 </html>

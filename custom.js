@@ -1,32 +1,31 @@
-/**
- * Created by Maarten on 6-8-2016.
- */
-$(function () {
+jQuery(document).ready(function ($) {
     getAll();
-})
+});
 
 function getAll(){
     $.ajax({
         url:'get.php',
         data:'',
         dataType: '',
-        success: function(html)
-        {
-            $("#collectionData").html(html);
+        success: function (result) {
+            $("#collectionData").html(result);
         }
     });
 }
 
-function add(){
+function add() {
     //catch addform submit and handle with ajax
     var addrequestdata = $("#addForm").serialize();
-    console.log(addrequestdata);
-//     $.ajax({
-//         type: 'POST',
-//         url:'add.php',
-//         data:addrequestdata,
-//         success:function (data) {
-//             console.log("Album has been added");
-//         }
-// });
+    $.ajax({
+        type: 'POST',
+        url:'add.php',
+        data: addrequestdata,
+        success: function (result) {
+            if(result === 'completed') {
+                getAll();
+            } else {
+                alert('Something went wrong!');
+            }
+        }
+    });
 }

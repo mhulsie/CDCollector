@@ -7,15 +7,16 @@
  */
 include "database.php";
 
-$artist = $_POST["artist"];
-$title = $_POST["title"];
-$year = $_POST["year"];
+$artist = mysqli_real_escape_string($conn, $_POST["artist"]);
+$title = mysqli_real_escape_string($conn, $_POST["title"]);
+$year = mysqli_real_escape_string($conn, $_POST["year"]);
 
 $sql = "INSERT INTO album (artist, title, year)
         VALUES ('$artist', '$title', '$year')";
 $result = $conn->query($sql);
 $conn->close();
-exit();
+
+echo 'completed';
 
 
 

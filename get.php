@@ -11,15 +11,16 @@ include "database.php";
 $sql = "SELECT * from album";
 $result = $conn->query($sql);
 $albums = mysqli_fetch_all($result);
+$html = '';
 
 foreach($albums as $album){
-    echo "<tr>";
-    echo "<td>" . $album[0] . "</td>";
-    echo "<td>" . $album[1] . "</td>";
-    echo "<td>" . $album[2] . "</td>";
-    echo "<td>" . $album[3] . "</td>";
-    echo "</tr>";
+    $html .= "<tr>";
+    $html .= "<td>" . $album[0] . "</td>";
+    $html .= "<td>" . $album[1] . "</td>";
+    $html .= "<td>" . $album[2] . "</td>";
+    $html .= "<td>" . $album[3] . "</td>";
+    $html .= "</tr>";
 };
 
 $conn->close();
-exit();
+echo $html;
