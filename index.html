@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CD Collector</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="custom.js"></script>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>Index</th>
+            <th>Artist</th>
+            <th>Title</th>
+            <th>Year</th>
+        </thead>
+        <tbody id="collectionData"></tbody>
+    </table>
+    <br>
+    <div>Add Album</div>
+    <form id="addForm" method="post">
+        Artist:<br>
+        <input type="text" name="artist"><br>
+        Title:<br>
+        <input type="text" name="title"><br>
+        Year:<br>
+        <input type="text" name="year"><br>
+        <button id="addButton" onclick="add()">Add</button>
+    </form>
+</body>
+</html>
